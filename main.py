@@ -1,13 +1,21 @@
+import os
 import sys, pygame
+from pygame.locals import *
+import time
+
 pygame.init()
 
-size = width, height = 1620, 780
-speed = [3,3]
+X = 450
+Y = 200
+os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (X,Y)
+size = width, height = 1200, 700
+speed = [1.5,1.5]
 black = 0, 0, 0
 
 screen = pygame.display.set_mode(size)
 
-ball = pygame.image.load("intro_ball.gif")
+ball = pygame.image.load("ball.gif")
+ball = pygame.transform.scale(ball, (125,125))
 ballrect = ball.get_rect()
 
 while 1:
